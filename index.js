@@ -42,14 +42,18 @@ onValue(shoppingListInDB, function(snapshot) {
     }else{
         console.log("pain")
         emptyCatyImage()
-        ClearCart()
+        EmptyCart()
     }
 })
 
 function ClearCart(){
+    shoppingListEl.innerHTML = ""
+}
+function EmptyCart(){
     let randomPromptIndex = Math.floor(Math.random()*EmptyBasketPrompts.length)
     shoppingListEl.innerHTML = EmptyBasketPrompts[randomPromptIndex]
 }
+
 
 function emptyCatyImage(){
     ImageIcon.src = "assets/shopping_basket.png"
